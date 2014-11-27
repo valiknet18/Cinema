@@ -1,0 +1,4 @@
+valiknet_cinema:
+    resource: "@ValiknetCinemaBundle/Resources/config/routing.yml"
+    prefix:   /
+

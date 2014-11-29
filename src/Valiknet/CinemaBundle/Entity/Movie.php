@@ -5,7 +5,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Valiknet\CinemaBundle\Entity\MovieRepository")
  * @ORM\Table(name="movie")
  */
 class Movie
@@ -24,7 +24,7 @@ class Movie
     protected $name;
 
     /**
-     * @ORM\Column(type="integer", length=20)
+     * @ORM\Column(type="integer", length=20, name="`like`")
      */
     protected $like;
 

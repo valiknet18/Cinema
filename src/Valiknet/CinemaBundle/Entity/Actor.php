@@ -29,6 +29,7 @@ class Actor
 
     /**
      * @Gedmo\Slug(fields={"name", "surname"})
+     * @ORM\Column(type="string")
      */
     protected $slug;
 
@@ -159,5 +160,28 @@ class Actor
     public function getMovies()
     {
         return $this->movies;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Actor
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

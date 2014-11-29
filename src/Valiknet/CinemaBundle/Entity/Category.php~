@@ -24,6 +24,7 @@ class Category
 
     /**
      * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(type="string")
      */
     protected $slug;
 
@@ -31,6 +32,8 @@ class Category
      * @ORM\ManyToMany(targetEntity="Movie", mappedBy="Movie")
      */
     protected $movies;
+
+
     /**
      * Constructor
      */
@@ -103,5 +106,28 @@ class Category
     public function getMovies()
     {
         return $this->movies;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Category
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

@@ -39,6 +39,11 @@ class Producer
     protected $country;
 
     /**
+     * @ORM\OneToMany(targetEntity="Movie", mappedBy="producer")
+     */
+    protected $movies;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -95,29 +100,6 @@ class Producer
     }
 
     /**
-     * Set country
-     *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $country
-     * @return Producer
-     */
-    public function setCountry(\Valiknet\CinemaBundle\Entity\Movie $country = null)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return \Valiknet\CinemaBundle\Entity\Movie 
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    /**
      * Set slug
      *
      * @param string $slug
@@ -138,5 +120,68 @@ class Producer
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set country
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Country $country
+     * @return Producer
+     */
+    public function setCountry(\Valiknet\CinemaBundle\Entity\Country $country = null)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return \Valiknet\CinemaBundle\Entity\Country 
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->movies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add movies
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Movie $movies
+     * @return Producer
+     */
+    public function addMovie(\Valiknet\CinemaBundle\Entity\Movie $movies)
+    {
+        $this->movies[] = $movies;
+
+        return $this;
+    }
+
+    /**
+     * Remove movies
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Movie $movies
+     */
+    public function removeMovie(\Valiknet\CinemaBundle\Entity\Movie $movies)
+    {
+        $this->movies->removeElement($movies);
+    }
+
+    /**
+     * Get movies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMovies()
+    {
+        return $this->movies;
     }
 }

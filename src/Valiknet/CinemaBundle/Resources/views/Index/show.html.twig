@@ -1,1 +1,75 @@
-{{ dump(data) }}
+{% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
+
+{% block title %}
+    Головна сторінка
+{% endblock %}
+
+{% block content %}
+    <div class="col-lg-12">
+        <h3>Найблищі релізи</h3>
+        {% for movie in movies %}
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <h4>
+                        <a href="{{ path("") }}">
+                            {{ movie.name }}
+                        </a>
+                    </h4>
+                </div>
+
+
+                <div class="col-lg-4">
+                    <img src="{{ movie.posters[0].url }}" />
+                </div>
+
+
+
+                <div class="col-lg-8">
+                    Країна: <a href="">{{ movie.country.name  }}</a>
+                </div>
+
+                <div class="col-lg-8">
+                    Категорії:
+                    {% for category in movie.categories %}
+                        <a href="">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+
+                <div class="col-lg-8">
+                    Режисер: <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
+                </div>
+
+                <div class="col-lg-8">
+                    Актори:
+                    {% for actor in movie.actors %}
+                        <a href="">{{ actor.name }} {{ actor.surname }}</a>
+                    {% endfor %}
+                </div>
+
+                <div class="col-lg-8">
+                    <p>{{ movie.description }}</p>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="col-lg-4">
+                        Подобається: <b>{{ movie.like }}</b>
+                    </div>
+
+                    <div class="col-lg-4">
+                        Не подобається: <b>{{ movie.dislike }}</b>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    Дата релізу: {{ movie.releasedAt|date('Y-m-d') }}
+                </div>
+
+                <div class="col-lg-8">
+                    Кількість рецензій {{ movie.reviews|length }}
+                </div>
+            </div>
+        {% else %}
+            <h3>На жаль, в даний момент нових релізів не очікується</h3>
+        {% endfor %}
+    </div>
+{% endblock %}

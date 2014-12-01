@@ -45,6 +45,11 @@ class Movie
     protected $slug;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    protected $description;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     protected $releasedAt;
@@ -413,5 +418,28 @@ class Movie
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Movie
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

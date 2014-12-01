@@ -4,11 +4,13 @@ Valiknet\CinemaBundle\Entity\Movie:
     like: <numberBetween(1,500)>
     dislike: <numberBetween(1,500)>
     releasedAt: <dateTimeBetween('-5 years', '+5 years')>
+    description: <realText()>
     trailer: http://youtube.com
     categories: 3x @category*
     country: @country*
     producer: @producer*
     actors: 7x @actor*
+    posters: 3x @poster*
 
 Valiknet\CinemaBundle\Entity\Category:
   category{1..30}:
@@ -33,7 +35,7 @@ Valiknet\CinemaBundle\Entity\Country:
     name: <country()>
 
 Valiknet\CinemaBundle\Entity\Poster:
-  poster{1..20}:
+  poster{1..100}:
     url: <url()>
     movie: @movie*
 

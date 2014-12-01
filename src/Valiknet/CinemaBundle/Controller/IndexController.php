@@ -7,11 +7,12 @@ class IndexController extends Controller
 {
     public function showAction()
     {
-        $data = $this->getDoctrine()->getManager()->getRepository('ValiknetCinemaBundle:Movie')->getNewestMovie();
+        $movies = $this->getDoctrine()->getManager()->getRepository('ValiknetCinemaBundle:Movie')->getNewestMovie();
+
         return $this->render(
             "ValiknetCinemaBundle:Index:show.html.twig",
             [
-                "data" => $data
+                "movies" => $movies
             ]
         );
     }

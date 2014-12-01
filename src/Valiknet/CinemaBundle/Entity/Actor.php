@@ -28,6 +28,11 @@ class Actor
     protected $surname;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $image;
+
+    /**
      * @Gedmo\Slug(fields={"name", "surname"})
      * @ORM\Column(type="string")
      */
@@ -39,9 +44,15 @@ class Actor
     protected $country;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    protected $description;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Movie", inversedBy="actors")
      */
     protected $movies;
+
     /**
      * Constructor
      */
@@ -183,5 +194,51 @@ class Actor
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Actor
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Actor
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

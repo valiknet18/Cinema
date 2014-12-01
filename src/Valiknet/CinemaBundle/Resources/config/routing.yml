@@ -3,6 +3,6 @@ valiknet_cinema_homepage:
     defaults: { _controller: ValiknetCinemaBundle:Index:show }
 
 
-valiknet_movie_index
+valiknet_movie_index:
     path: /movie/{slug}
     defaults: { _controller: ValiknetCinemaBundle:Movie:get }

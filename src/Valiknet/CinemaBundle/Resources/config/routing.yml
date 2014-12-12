@@ -2,7 +2,24 @@ valiknet_cinema_homepage:
     path:     /
     defaults: { _controller: ValiknetCinemaBundle:Index:show }
 
-
 valiknet_movie_index:
     path: /movie/{slug}
     defaults: { _controller: ValiknetCinemaBundle:Movie:get }
+
+valiknet_actor_last:
+    path: /actor/last
+    defaults: { _controller: ValiknetCinemaBundle:Actor:last }
+
+valiknet_actor_index:
+    path: /actor/{slug}
+    defaults: { _controller: ValiknetCinemaBundle:Actor:get }
+
+valiknet_category_index:
+    path: /category/{slug}
+    defaults: { _controller: ValiknetCinemaBundle:Category:index }
+
+valiknet_country_index:
+    path: /country/{slug}/{section}
+    defaults: { _controller: ValiknetCinemaBundle:Country:index, section: movies }
+    requirements:
+      section: movies|actors|producers

@@ -2,6 +2,7 @@
 namespace Valiknet\CinemaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -25,6 +26,12 @@ class Country
      * @ORM\OneToMany(targetEntity="Movie", mappedBy="country")
      */
     protected $movies;
+
+    /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(type="string")
+     */
+    protected $slug;
 
     /**
      * @ORM\OneToMany(targetEntity="Actor", mappedBy="country")

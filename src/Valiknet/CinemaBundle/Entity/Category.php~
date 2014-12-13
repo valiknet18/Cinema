@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Valiknet\CinemaBundle\Entity\CategoryRepository")
  * @ORM\Table(name="category")
  */
 class Category
@@ -29,7 +29,7 @@ class Category
     protected $slug;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Movie", mappedBy="Movie")
+     * @ORM\ManyToMany(targetEntity="Movie", mappedBy="categories")
      */
     protected $movies;
 

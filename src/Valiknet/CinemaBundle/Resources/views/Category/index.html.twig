@@ -1,0 +1,75 @@
+{% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
+
+{% block title %}
+    {{ category.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="col-lg-12">
+        {%  set targetDate = '' %}
+
+        {% for movie in category.movies %}
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    {% if (targetDate != movie.releasedAt|date('Y-m-d')) %}
+                        {% set targetDate = movie.releasedAt|date('Y-m-d') %}
+                        <h3>{{ movie.releasedAt|date('Y-m-d') }}</h3>
+                    {% endif %}
+                </div>
+
+                <div class="col-lg-12">
+                    <h4>
+                        {{ movie.name }}
+                    </h4>
+                </div>
+
+                <div class="col-lg-4">
+                    <img src="{{ movie.posters[0].url }}" />
+                </div>
+
+                <div class="col-lg-8">
+                    Країна: <a href="{{ path('valiknet_country_index', {'slug': movie.country.slug, 'section':'movies'}) }}">{{ movie.country.name }}</a>
+                </div>
+
+                <div class="col-lg-8">
+                    Категорії:
+                    {% for category in movie.categories %}
+                        <a href="{{ path('valiknet_category_index', {"slug":category.slug}) }}">
+                            {{ category.name }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+                <div class="col-lg-8">
+                    Режисер:
+                    <a href="">
+                        {{ movie.producer.name }} {{ movie.producer.surname }}
+                    </a>
+                </div>
+
+                <div class="col-lg-8">
+                    Актори:
+                    {% for actor in movie.actors %}
+                        <a href="{{ path('valiknet_actor_index', {"slug" : actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
+                    {% endfor %}
+                </div>
+
+                <div class="col-lg-12">
+                    <p>
+                        {{ movie.description|slice(0, 200) }}
+                    </p>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        Подобається: {{ movie.like }}
+                    </div>
+
+                    <div class="col-lg-6">
+                        Не подобається: {{ movie.dislike }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -2,9 +2,13 @@
 namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
 
 class MovieController extends Controller
 {
+    /**
+     * @Template()
+     */
     public function getAction($slug)
     {
         $movie = $this->getDoctrine()
@@ -12,11 +16,14 @@ class MovieController extends Controller
                     ->getRepository('ValiknetCinemaBundle:Movie')
                     ->findOneBySlug($slug);
 
-        return $this->render(
-            "ValiknetCinemaBundle:movie:get.html.twig",
-            [
+        if(!$movie){
+            throw $this->createNotFoundException(
+                'Такого фільму немає в базі'
+            );
+        }
+
+        return [
                 "movie" => $movie
-            ]
-        );
+        ];
     }
 } 

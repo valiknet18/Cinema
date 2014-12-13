@@ -1,0 +1,46 @@
+Valiknet\CinemaBundle\Entity\Movie:
+  movie{1..30}:
+    name: <word()>
+    like: <numberBetween(1,500)>
+    dislike: <numberBetween(1,500)>
+    releasedAt: <dateTimeBetween('-5 years', '+5 years')>
+    description: <realText()>
+    trailer: http://youtube.com
+    categories: 3x @category*
+    country: @country*
+    producer: @producer*
+    actors: 7x @actor*
+    posters: 3x @poster*
+
+Valiknet\CinemaBundle\Entity\Category:
+  category{1..30}:
+    name: <userName()>
+
+Valiknet\CinemaBundle\Entity\Actor:
+  actor{1..30}:
+    name: <firstName()>
+    surname: <lastName()>
+    country: @country*
+    movies: 3x @movie*
+
+Valiknet\CinemaBundle\Entity\Review:
+  review{1..40}:
+    nickname: <firstName()>
+    text: <realText()>
+    createdAt: <dateTime()>
+    movie: @movie*
+
+Valiknet\CinemaBundle\Entity\Country:
+  country{1..15}:
+    name: <country()>
+
+Valiknet\CinemaBundle\Entity\Poster:
+  poster{1..100}:
+    url: <url()>
+    movie: @movie*
+
+Valiknet\CinemaBundle\Entity\Producer:
+    producer{1..20}:
+        name: <firstName()>
+        surname: <lastName()>
+        country: @country*

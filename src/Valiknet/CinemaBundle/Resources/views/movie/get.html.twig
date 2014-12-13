@@ -1,0 +1,91 @@
+{% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
+
+{% block title %}
+    {{ movie.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="col-lg-12">
+        <div class="col-lg-12">
+            <h4>
+                {{ movie.name }}
+            </h4>
+        </div>
+
+
+        <div class="col-lg-4">
+            <img src="{{ movie.posters[0].url }}" />
+        </div>
+
+
+
+        <div class="col-lg-8">
+            Країна: <a href="">{{ movie.country.name  }}</a>
+        </div>
+
+        <div class="col-lg-8">
+            Категорії:
+            {% for category in movie.categories %}
+                <a href="">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-8">
+            Режисер: <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
+        </div>
+
+        <div class="col-lg-8">
+            Актори:
+            {% for actor in movie.actors %}
+                <a href="">{{ actor.name }} {{ actor.surname }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-8">
+            <p>{{ movie.description }}</p>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="col-lg-4">
+                Подобається: <b>{{ movie.like }}</b>
+            </div>
+
+            <div class="col-lg-4">
+                Не подобається: <b>{{ movie.dislike }}</b>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            Дата релізу: {{ movie.releasedAt|date('Y-m-d') }}
+        </div>
+
+        <div class="col-lg-12">
+            Трейлер:
+        </div>
+
+        <div class="col-lg-12">
+            <h4>
+                Коментарі
+            </h4>
+        </div>
+
+        {% for review in movie.reviews %}
+        <div class="col-lg-12">
+            <div class="col-lg-12">
+                Автор: {{ review.nickname }}
+            </div>
+
+            <div class="col-lg-12">
+                <p>
+                   {{ review.text }}
+                </p>
+            </div>
+
+            <div class="col-lg-12">
+                Дата створення: {{ review.createdAt|date("Y-m-d H:i:s") }}
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

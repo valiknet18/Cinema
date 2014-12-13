@@ -5,11 +5,11 @@ class CountryService
 {
     public function assertSection($section)
     {
-        $sections = array(
+        $sections = [
             'movies',
             'producers',
             'actors'
-        );
+        ];
 
         if (in_array($section, $sections)) {
             return true;

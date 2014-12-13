@@ -1,7 +1,7 @@
 {% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
 
 {% block title %}
-    {{ name }}
+    {{ country.name }}
 {% endblock %}
 
 {% block content %}
@@ -10,78 +10,26 @@
             <nav>
                 <ul class="nav nav-pills pull-right">
                     <li role="presentation">
-                        <a href="{{ path("valiknet_country_index", {'slug':slug, 'section':'movies'}) }}">Фільми</a>
+                        <a href="{{ path("valiknet_country_index", {'slug':country.slug, 'section':'movies'}) }}">Фільми</a>
                     </li>
 
                     <li role="presentation">
-                        <a href="{{ path("valiknet_country_index", {'slug':slug, 'section':'actors'}) }}">Актори</a>
+                        <a href="{{ path("valiknet_country_index", {'slug':country.slug, 'section':'actors'}) }}">Актори</a>
                     </li>
 
                     <li role="presentation">
-                        <a href="{{ path("valiknet_country_index", {'slug':slug, 'section':'producers'}) }}">Режисери</a>
+                        <a href="{{ path("valiknet_country_index", {'slug':country.slug, 'section':'producers'}) }}">Режисери</a>
                     </li>
                 </ul>
             </nav>
         </div>
 
-        {% if () %}
-        {% elseif () %}
-        {% elseif %}
-
-        {% for movie in movies %}
-            <div class="col-lg-12">
-                <div class="col-lg-12">
-                    <a href="{{ path('valiknet_movie_index', {'slug':movie.slug}) }}">{{ movie.name }}</a>
-                </div>
-
-                <div class="col-lg-4">
-                    <img src="{{ movie.posters[0].url }}" />
-                </div>
-
-                <div class="col-lg-8">
-                    Країна: <a href="{{ path('valiknet_country_index', {'slug' : movie.country.slug, 'section' : 'movies'}) }}">{{ movie.country.name }}</a>
-                </div>
-
-                <div class="col-lg-8">
-                    Категорії:
-                    {% for category in movie.categories %}
-                        <a href="{{ path('valiknet_category_index', {'slug': category.slug}) }}">{{ category.name }}</a>
-                    {% endfor %}
-                </div>
-
-                <div class="col-lg-8">
-                    Режисер:
-                    <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
-                </div>
-
-                <div class="col-lg-12">
-                    Актори:
-                    {% for actor in movie.actors %}
-                        <a href="{{ path('valiknet_actor_index', {'slug':actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
-                    {% endfor %}
-                </div>
-
-                <div class="col-lg-12">
-                    <p>
-                        {{ movie.description|slice(0, 255) }}
-                    </p>
-                </div>
-
-                <div class="col-lg-12">
-                    <div class="col-lg-6">
-                        Подобається: <b>{{ movie.like }}</b>
-                    </div>
-
-                    <div class="col-lg-6">
-                        Не подобається: <b>{{ movie.dislike }}</b>
-                    </div>
-                </div>
-
-                <div class="col-lg-12">
-                    Кількість рецензій: {{ movie.reviews|length }}
-                </div>
-            </div>
-        {% endfor %}
-
+        {% if (section == 'movies') %}
+            {{ include('@ValiknetCinema/Country/sections/movies.html.twig') }}
+        {% elseif (section == 'actors') %}
+            {{ include('@ValiknetCinema/Country/sections/actors.html.twig') }}
+        {% else %}
+            {{ include('@ValiknetCinema/Country/sections/producers.html.twig') }}
+        {% endif %}
     </div>
 {% endblock %}

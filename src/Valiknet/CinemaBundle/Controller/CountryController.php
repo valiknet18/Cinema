@@ -3,6 +3,7 @@ namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CountryController extends Controller
 {
@@ -16,24 +17,14 @@ class CountryController extends Controller
                 ->getRepository('ValiknetCinemaBundle:Country')
                 ->findOneBySlug($slug);
 
-        switch ($section) {
-            case 'movies' : {
-                return [
-                    'name' => $country->getName(),
-                    'movies' => $country->getMovies()
-                ];
-            }
-                break;
 
-            case 'actors' : {
-
-            }
-                break;
-
-            case 'producers' : {
-
-            }
-                break;
+        if ($this->get('valiknet.cinema_bundle.services.country_service')->assertSection($section) && $country) {
+            return [
+                'country' => $country,
+                'section' => $section
+            ];
         }
+
+        throw new NotFoundHttpException();
     }
 }

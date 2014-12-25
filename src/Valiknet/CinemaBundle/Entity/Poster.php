@@ -17,7 +17,7 @@ class Poster
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     protected $url;
 

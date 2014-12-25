@@ -1,0 +1,34 @@
+{% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
+
+{% block title %}
+    Останні 15 акторів
+{% endblock %}
+
+{% block content %}
+    {% for actor in actors %}
+    <div class="col-lg-12">
+        <div class="col-lg-12">
+            <h4>{{ actor.name }} {{ actor.surname }}</h4>
+        </div>
+
+        <div class="col-lg-4">
+            <img src="{{ actor.image }}" />
+        </div>
+
+        <div class="col-lg-8">
+            Країна: {{ actor.country.name }}
+        </div>
+
+        <div class="col-lg-8">
+            <p>Коротка історія: {{ actor.description }}</p>
+        </div>
+
+        <div class="col-lg-12">
+            Перелік фільмів в яких знімається:
+            {% for movie in actor.movies %}
+                <a href="{{ path('valiknet_cinema_homepage', {"slug":movie.slug}) }}">{{ movie.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

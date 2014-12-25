@@ -22,6 +22,7 @@ Valiknet\CinemaBundle\Entity\Actor:
     surname: <lastName()>
     country: @country*
     movies: 3x @movie*
+    description: <realText()>
 
 Valiknet\CinemaBundle\Entity\Review:
   review{1..40}:
@@ -44,3 +45,4 @@ Valiknet\CinemaBundle\Entity\Producer:
         name: <firstName()>
         surname: <lastName()>
         country: @country*
+        description: <realText()>

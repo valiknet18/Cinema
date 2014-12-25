@@ -1,0 +1,35 @@
+{% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
+
+{% block title %}
+    {{ country.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="col-lg-12">
+        <div>
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation">
+                        <a href="{{ path("valiknet_country_index", {'slug':country.slug, 'section':'movies'}) }}">Фільми</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="{{ path("valiknet_country_index", {'slug':country.slug, 'section':'actors'}) }}">Актори</a>
+                    </li>
+
+                    <li role="presentation">
+                        <a href="{{ path("valiknet_country_index", {'slug':country.slug, 'section':'producers'}) }}">Режисери</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        {% if (section == 'movies') %}
+            {{ include('@ValiknetCinema/Country/sections/movies.html.twig') }}
+        {% elseif (section == 'actors') %}
+            {{ include('@ValiknetCinema/Country/sections/actors.html.twig') }}
+        {% else %}
+            {{ include('@ValiknetCinema/Country/sections/producers.html.twig') }}
+        {% endif %}
+    </div>
+{% endblock %}

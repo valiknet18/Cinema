@@ -1758,7 +1758,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>547c4e77ddd73</argument>
+            <argument>548c7c8ec6369</argument>
           </service>
         </argument>
       </argument>
@@ -1874,7 +1874,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>547c4e77ddd73</argument>
+            <argument>548c7c8ec6369</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2415,6 +2415,7 @@
       <argument type="service" id="security.authentication.trust_resolver" on-invalid="null"/>
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
     </service>
+    <service id="valiknet.cinema_bundle.services.country_service" class="Valiknet\CinemaBundle\Services\CountryService"/>
     <service id="stof_doctrine_extensions.uploadable.manager" class="Stof\DoctrineExtensionsBundle\Uploadable\UploadableManager">
       <argument type="service">
         <service class="Gedmo\Uploadable\UploadableListener" public="false">

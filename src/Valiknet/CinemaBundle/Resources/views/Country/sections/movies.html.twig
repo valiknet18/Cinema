@@ -1,0 +1,60 @@
+{% for movie in country.movies %}
+    <div class="col-lg-12">
+        <div class="col-lg-12">
+            <a href="{{ path('valiknet_movie_index', {'slug':movie.slug}) }}">{{ movie.name }}</a>
+        </div>
+
+        <div class="col-lg-4">
+            <img src="{{ movie.posters[0].url }}" />
+        </div>
+
+        <div class="col-lg-8">
+            Країна: <a href="{{ path('valiknet_country_index', {'slug' : movie.country.slug, 'section' : 'movies'}) }}">{{ movie.country.name }}</a>
+        </div>
+
+        <div class="col-lg-8">
+            Категорії:
+            {% for category in movie.categories %}
+                <a href="{{ path('valiknet_category_index', {'slug': category.slug}) }}">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-8">
+            Режисер:
+            <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
+        </div>
+
+        <div class="col-lg-12">
+            Актори:
+            {% for actor in movie.actors %}
+                <a href="{{ path('valiknet_actor_index', {'slug':actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-12">
+            <p>
+                {{ movie.description|slice(0, 255) }}
+            </p>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                Подобається: <b>{{ movie.like }}</b>
+            </div>
+
+            <div class="col-lg-6">
+                Не подобається: <b>{{ movie.dislike }}</b>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            Кількість рецензій: {{ movie.reviews|length }}
+        </div>
+    </div>
+{% else %}
+    <div class="col-lg-12">
+        <h3>
+            В базі немає фільмів які знімалися в цій країні
+        </h3>
+    </div>
+{% endfor %}

@@ -65,7 +65,7 @@
 
         <div class="col-lg-12">
             <h4>
-                Коментарі
+                <Рецензії></Рецензії>
             </h4>
         </div>
 
@@ -87,5 +87,12 @@
         </div>
         {% endfor %}
 
+        <div class="col-lg-12">
+            <h3>Добавлення нової рецензії</h3>
+
+            {{ form_start(form) }}
+
+            {{ form_end(form) }}
+        </div>
     </div>
 {% endblock %}

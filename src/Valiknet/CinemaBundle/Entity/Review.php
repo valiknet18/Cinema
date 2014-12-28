@@ -28,6 +28,11 @@ class Review
     protected $text;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $type;
+
+    /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
@@ -138,5 +143,28 @@ class Review
     public function getMovie()
     {
         return $this->movie;
+    }
+
+    /**
+     * Set type
+     *
+     * @param boolean $type
+     * @return Review
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return boolean 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

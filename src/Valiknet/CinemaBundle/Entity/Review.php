@@ -3,6 +3,7 @@ namespace Valiknet\CinemaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -19,16 +20,27 @@ class Review
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank
      */
     protected $nickname;
 
     /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank
+     * @Assert\Email
+     */
+    protected $email;
+
+    /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
     protected $text;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\NotBlank
+     * @Assert\Choice(choices={0,1})
      */
     protected $type;
 
@@ -166,5 +178,28 @@ class Review
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Review
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

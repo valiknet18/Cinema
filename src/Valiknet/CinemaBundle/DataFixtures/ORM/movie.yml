@@ -11,6 +11,7 @@ Valiknet\CinemaBundle\Entity\Movie:
     producer: @producer*
     actors: 7x @actor*
     posters: 3x @poster*
+    type: <numberBetween(0,3)>
 
 Valiknet\CinemaBundle\Entity\Category:
   category{1..30}:
@@ -30,6 +31,7 @@ Valiknet\CinemaBundle\Entity\Review:
     text: <realText()>
     createdAt: <dateTime()>
     movie: @movie*
+    type: <numberBetween(0,1)>
 
 Valiknet\CinemaBundle\Entity\Country:
   country{1..15}:

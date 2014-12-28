@@ -5,7 +5,14 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd"
         >
     <services>
+        <service id="valiknet.cinemabundle.twig.valiknet_cinema_extension" class="Valiknet\CinemaBundle\Twig\ValiknetCinemaExtension">
+            <tag name="twig.extension" />
+        </service>
+
         <service id="valiknet.cinema_bundle.services.country_service" class="Valiknet\CinemaBundle\Services\CountryService">
+        </service>
+
+        <service id="valiknet.cinema_bundle.services.review_service" class="Valiknet\CinemaBundle\Services\ReviewService">
         </service>
     </services>
 </container>

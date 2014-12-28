@@ -92,6 +92,11 @@ class Movie
     protected $posters;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $active;
+
+    /**
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="movies")
      */
     protected $categories;
@@ -500,5 +505,28 @@ class Movie
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Movie
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }

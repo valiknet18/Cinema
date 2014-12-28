@@ -9,7 +9,7 @@
         {%  set targetDate = '' %}
 
         {% for movie in category.movies %}
-            <div class="col-lg-12">
+            <div class="col-lg-12 thumbnail">
                 <div class="col-lg-12">
                     {% if (targetDate != movie.releasedAt|date('Y-m-d')) %}
                         {% set targetDate = movie.releasedAt|date('Y-m-d') %}
@@ -61,11 +61,11 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <div class="col-lg-6">
+                    <div class="col-lg-3 btn btn-success">
                         Подобається: {{ movie.like }}
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-3 btn btn-danger">
                         Не подобається: {{ movie.dislike }}
                     </div>
                 </div>

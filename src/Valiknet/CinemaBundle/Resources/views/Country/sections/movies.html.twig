@@ -1,5 +1,5 @@
 {% for movie in country.movies %}
-    <div class="col-lg-12">
+    <div class="col-lg-12 thumbnail">
         <div class="col-lg-12">
             <a href="{{ path('valiknet_movie_index', {'slug':movie.slug}) }}">{{ movie.name }}</a>
         </div>
@@ -38,11 +38,11 @@
         </div>
 
         <div class="col-lg-12">
-            <div class="col-lg-6">
+            <div class="col-lg-3 btn btn-success">
                 Подобається: <b>{{ movie.like }}</b>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-3 btn btn-danger">
                 Не подобається: <b>{{ movie.dislike }}</b>
             </div>
         </div>

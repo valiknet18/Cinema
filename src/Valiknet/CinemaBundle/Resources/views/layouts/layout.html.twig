@@ -8,9 +8,9 @@
 
     <body>
         <div class="container">
-            <div class="header">
+            <div class="header navbar navbar-inverse">
                 <nav>
-                    <ul class="nav nav-pills pull-right">
+                    <ul class="nav navbar-nav pull-right">
                         <li role="presentation">
                             <a href="{{ path("valiknet_cinema_homepage") }}">Головна сторінка</a>
                         </li>
@@ -19,8 +19,9 @@
                             <a href="#">Фільми</a>
                         </li>
                     </ul>
+
+                    <span class="navbar-brand">Cinema</span>
                 </nav>
-                <h3>Cinema</h3>
             </div>
             <div class="row marketing">
                 {% block content %}

@@ -54,6 +54,11 @@ class Movie
      */
     protected $releasedAt;
 
+//    /**
+//     * @ORM\Column(type="enum")
+//     */
+//    protected $type;
+
     /**
      * @ORM\ManyToOne(targetEntity="Producer", inversedBy="movies")
      */
@@ -83,6 +88,7 @@ class Movie
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="movies")
      */
     protected $categories;
+
     /**
      * Constructor
      */

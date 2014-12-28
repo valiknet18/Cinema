@@ -45,6 +45,11 @@ class Movie
     protected $slug;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $basePoster;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $description;
@@ -54,10 +59,10 @@ class Movie
      */
     protected $releasedAt;
 
-//    /**
-//     * @ORM\Column(type="enum")
-//     */
-//    protected $type;
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $type;
 
     /**
      * @ORM\ManyToOne(targetEntity="Producer", inversedBy="movies")
@@ -447,5 +452,51 @@ class Movie
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set basePoster
+     *
+     * @param string $basePoster
+     * @return Movie
+     */
+    public function setBasePoster($basePoster)
+    {
+        $this->basePoster = $basePoster;
+
+        return $this;
+    }
+
+    /**
+     * Get basePoster
+     *
+     * @return string 
+     */
+    public function getBasePoster()
+    {
+        return $this->basePoster;
+    }
+
+    /**
+     * Set type
+     *
+     * @param integer $type
+     * @return Movie
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return integer 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

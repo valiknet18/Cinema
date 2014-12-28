@@ -1,4 +1,0 @@
-services:
-#    valiknet_cinema.example:
-#        class: Valiknet\CinemaBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

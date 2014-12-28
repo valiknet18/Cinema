@@ -1,6 +1,6 @@
 valiknet_cinema_homepage:
     path:     /
-    defaults: { _controller: ValiknetCinemaBundle:Index:show }
+    defaults: { _controller: ValiknetCinemaBundle:Index:show, _locale: uk}
 
 valiknet_movie_index:
     path: /movie/{slug}

@@ -34,14 +34,19 @@ class Producer
     protected $slug;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="producers")
+     * @ORM\Column(type="datetime")
      */
-    protected $country;
+    protected $dateBirthday;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $image;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="producers")
+     */
+    protected $country;
 
     /**
      * @ORM\Column(type="text")
@@ -239,5 +244,28 @@ class Producer
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set dateBirthday
+     *
+     * @param \DateTime $dateBirthday
+     * @return Producer
+     */
+    public function setDateBirthday($dateBirthday)
+    {
+        $this->dateBirthday = $dateBirthday;
+
+        return $this;
+    }
+
+    /**
+     * Get dateBirthday
+     *
+     * @return \DateTime 
+     */
+    public function getDateBirthday()
+    {
+        return $this->dateBirthday;
     }
 }

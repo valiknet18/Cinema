@@ -7,26 +7,32 @@
 {% block content %}
     <div class="col-lg-12">
         <div class="col-lg-12">
-            <h4>{{ actor.name }} {{ actor.surname }}</h4>
+            <h2>{{ actor.name }} {{ actor.surname }}</h2>
         </div>
 
         <div class="col-lg-4">
-            <img src="{{ actor.image }}" />
+            <img src="{{ actor.image }}" class="actor-image"/>
         </div>
 
-        <div class="col-lg-8">
-            Країна: {{ actor.country.name }}
+        <div class="characters-movie col-lg-8">
+            <div class="col-lg-8">
+                Країна: {{ actor.country.name }}
+            </div>
+
+            <div class="col-lg-8">
+                Дата народження:
+            </div>
+
+            <div class="col-lg-12">
+                Перелік фільмів в яких знімається:
+                {% for movie in actor.movies %}
+                    <a href="{{ path('valiknet_cinema_homepage', {"slug" : movie.slug}) }}">{{ movie.name }}</a>
+                {% endfor %}
+            </div>
         </div>
 
         <div class="col-lg-8">
             <p>Коротка історія: {{ actor.description }}</p>
-        </div>
-
-        <div class="col-lg-12">
-            Перелік фільмів в яких знімається:
-            {% for movie in actor.movies %}
-                <a href="{{ path('valiknet_cinema_homepage', {"slug":movie.slug}) }}">{{ movie.name }}</a>
-            {% endfor %}
         </div>
     </div>
 {% endblock %}

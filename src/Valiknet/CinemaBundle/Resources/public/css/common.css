@@ -6,10 +6,9 @@
     margin-left: 20px;
 }
 
-img.posters {
-    width: 250px;
+img.base-poster {
+    width: 270px;
     height: 360px;
-    border: 1px solid #000000;
 }
 
 textarea.review-text {
@@ -21,4 +20,9 @@ textarea.review-text {
     padding: 10px 0px;
     margin: 3px 0px;
     border-bottom: 1px solid #eeeeee;
+}
+
+img.poster-in-list {
+    width: 140px;
+    height: 200px;
 }

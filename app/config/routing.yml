@@ -1,3 +1,6 @@
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
 valiknet_cinema_homepage:
     path:     /{_locale}
     defaults: { _controller: ValiknetCinemaBundle:Index:show, _locale: uk}
@@ -6,4 +9,3 @@ valiknet_cinema:
     resource: "@ValiknetCinemaBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/
     defaults: { _locale: uk }
-

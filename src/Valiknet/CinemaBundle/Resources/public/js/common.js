@@ -10,7 +10,7 @@ $(document).on('submit', 'form[name=add_review]', function(e){
         success: function (data, dd, options) {
             switch (options.status) {
                 case 200 :
-                    document.location.href = "";
+                    document.location.reload();
                     break;
 
                 default :

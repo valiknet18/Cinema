@@ -2,10 +2,10 @@
 
 namespace Valiknet\CinemaBundle\Controller;
 
-use Proxies\__CG__\Valiknet\CinemaBundle\Entity\Review;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Valiknet\CinemaBundle\Entity\Review;
 use Valiknet\CinemaBundle\Form\Type\AddReviewType;
 
 class ReviewController extends Controller

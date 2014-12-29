@@ -26,8 +26,10 @@ class MovieController extends Controller
 
         $form = $this->createForm(new AddReviewType());
 
+        $reviews = $movie->getReviews();
+
         $reviews = $this->get('valiknet.cinema_bundle.services.review_service')
-                        ->splitArray($movie->getReviews());
+                        ->splitArray($reviews);
 
         return [
             "movie" => $movie,

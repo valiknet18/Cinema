@@ -24,3 +24,19 @@ valiknet_country_index:
     requirements:
       section: movies|actors|producers
 
+valiknet_proposal_list:
+  path: /proposal/list
+  defaults: { _controller: ValiknetCinemaBundle:Proposal:list}
+
+valiknet_proposal_movie:
+  path: /proposal/movie
+  defaults: { _controller: ValiknetCinemaBundle:Proposal:movie}
+
+valiknet_proposal_actor:
+  path: /proposal/actor
+  defaults: { _controller: ValiknetCinemaBundle:Proposal:actor}
+
+valiknet_proposal_director:
+  path: /proposal/director
+  defaults: { _controller: ValiknetCinemaBundle:Proposal:director}
+

@@ -1,26 +1,32 @@
-{% for producer in country.producers %}
-    <div class="col-lg-12 thumbnail">
+{% for director in country.directors %}
+    <div class="col-lg-12">
         <div class="col-lg-12">
-            <h4>{{ producer.name }} {{ producer.surname }}</h4>
+            <h2>{{ director.name }} {{ director.surname }}</h2>
         </div>
 
         <div class="col-lg-4">
-            <img src="{{ producer.image }}" />
+            <img src="{{ director.image }}" class="director-image"/>
+        </div>
+
+        <div class="characters-movie col-lg-8">
+            <div class="col-lg-8">
+                Країна: {{ director.country.name }}
+            </div>
+
+            <div class="col-lg-8">
+                Дата народження:
+            </div>
+
+            <div class="col-lg-12">
+                Перелік фільмів в яких знімається:
+                {% for movie in director.movies %}
+                    <a href="{{ path('valiknet_cinema_homepage', {"slug" : movie.slug}) }}">{{ movie.name }}</a>
+                {% endfor %}
+            </div>
         </div>
 
         <div class="col-lg-8">
-            Країна: {{ producer.country.name }}
-        </div>
-
-        <div class="col-lg-8">
-            <p>Коротка історія: {{ producer.description }}</p>
-        </div>
-
-        <div class="col-lg-12">
-            Перелік фільмів які режисерує:
-            {% for movie in producer.movies %}
-                <a href="{{ path('valiknet_cinema_homepage', {"slug":movie.slug}) }}">{{ movie.name }}</a>
-            {% endfor %}
+            <p>Коротка історія: {{ director.description }}</p>
         </div>
     </div>
 {% else %}

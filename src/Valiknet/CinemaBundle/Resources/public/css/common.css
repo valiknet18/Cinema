@@ -27,7 +27,7 @@ img.poster-in-list {
     height: 200px;
 }
 
-img.actor-image {
+.actor-image, .director-image {
     width: 270px;
     height: 360px;
 }

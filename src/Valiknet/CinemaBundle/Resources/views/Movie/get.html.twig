@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-lg-4">
-            <img src="{{ movie.posters[0].url }}" class="base-poster"/>
+            <img src="{{ asset(movie.basePoster) }}" class="base-poster"/>
         </div>
 
         <div class="characters-movie col-lg-8">
@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-lg-8">
-                Режисер: <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
+                Режисер: <a href="">{{ movie.director.name }} {{ movie.director.surname }}</a>
             </div>
 
             <div class="col-lg-8">

@@ -1,60 +1,46 @@
 {% for movie in country.movies %}
-    <div class="col-lg-12 thumbnail">
+    <div class="col-lg-6">
         <div class="col-lg-12">
-            <a href="{{ path('valiknet_movie_index', {'slug':movie.slug}) }}">{{ movie.name }}</a>
+            <h2>
+                <a href="{{ path("valiknet_movie_index", {"slug":movie.slug}) }}">
+                    {{ movie.name }}
+                </a>
+            </h2>
         </div>
 
         <div class="col-lg-4">
-            <img src="{{ movie.posters[0].url }}" />
+            <img src="{{ asset(movie.basePoster) }}" class="poster-in-list" />
         </div>
 
-        <div class="col-lg-8">
-            Країна: <a href="{{ path('valiknet_country_index', {'slug' : movie.country.slug, 'section' : 'movies'}) }}">{{ movie.country.name }}</a>
-        </div>
-
-        <div class="col-lg-8">
-            Категорії:
-            {% for category in movie.categories %}
-                <a href="{{ path('valiknet_category_index', {'slug': category.slug}) }}">{{ category.name }}</a>
-            {% endfor %}
-        </div>
-
-        <div class="col-lg-8">
-            Режисер:
-            <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
-        </div>
-
-        <div class="col-lg-12">
-            Актори:
-            {% for actor in movie.actors %}
-                <a href="{{ path('valiknet_actor_index', {'slug':actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
-            {% endfor %}
-        </div>
-
-        <div class="col-lg-12">
-            <p>
-                {{ movie.description|slice(0, 255) }}
-            </p>
-        </div>
-
-        <div class="col-lg-12">
-            <div class="col-lg-3 btn btn-success">
-                Подобається: <b>{{ movie.like }}</b>
+        <div class="characters-movie col-lg-8">
+            <div class="col-lg-12">
+                Тип: {{ movie.type|filterTypeCinema }}
             </div>
 
-            <div class="col-lg-3 btn btn-danger">
-                Не подобається: <b>{{ movie.dislike }}</b>
+            <div class="col-lg-12">
+                Режисер: <a href="">{{ movie.director.name }} {{ movie.director.surname }}</a>
+            </div>
+
+            <div class="col-lg-12">
+                Дата релізу: {{ movie.releasedAt|date('Y-m-d') }}
+            </div>
+
+            <div class="col-lg-12">
+                Рейтинг:
+                <div class="btn btn-success">
+                    <b>{{ movie.like }}</b>
+                </div>
+                /
+                <div class="btn btn-danger">
+                    <b>{{ movie.dislike }}</b>
+                </div>
             </div>
         </div>
 
         <div class="col-lg-12">
-            Кількість рецензій: {{ movie.reviews|length }}
+            <p>{{ movie.description|slice(0, 150) }}...</p>
         </div>
     </div>
 {% else %}
-    <div class="col-lg-12">
-        <h3>
-            В базі немає фільмів які знімалися в цій країні
-        </h3>
-    </div>
+    <h3>На жаль, в даний момент нових релізів не очікується</h3>
 {% endfor %}

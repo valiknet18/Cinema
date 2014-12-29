@@ -9,7 +9,8 @@ class ReviewService
     {
         $splitReviews = [
             [],
-            []
+            [],
+            $reviews
         ];
 
         foreach ($reviews as $review) {

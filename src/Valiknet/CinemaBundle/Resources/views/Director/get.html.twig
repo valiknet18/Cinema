@@ -30,7 +30,7 @@
 
         <div class="col-lg-12">
             <h4>Перелік фільмів в яких режисерує:</h4>
-            {% for movie in director.movies %}
+            {% for movie in movies %}
                 <div class="col-lg-6">
                     <div class="col-lg-12">
                         <h2>
@@ -74,6 +74,9 @@
                     </div>
                 </div>
             {% endfor %}
+            <div class="col-lg-12">
+                {{ knp_pagination_render(movies) }}
+            </div>
         </div>
     </div>
 {% endblock %}

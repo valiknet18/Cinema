@@ -19,7 +19,6 @@ class MovieRepository extends EntityRepository
                     ->where("m.releasedAt > :date")
                     ->orderBy('m.releasedAt', 'ASC')
                     ->setParameter('date', $date)
-                    ->setMaxResults(5)
                     ->getQuery()
                     ->getResult();
 

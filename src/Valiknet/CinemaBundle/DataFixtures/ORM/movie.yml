@@ -12,7 +12,7 @@ Valiknet\CinemaBundle\Entity\Movie:
     actors: 7x @actor*
     posters: 3x @poster*
     type: <numberBetween(0,3)>
-    basePoster: <image($dir = 'web/bundles/valiknetcinema/images/basePosters', $width = 600, $height = 720)>
+    basePoster: <image($dir = 'src/Valiknet/CinemaBundle/Resources/public/images/basePosters', $width = 600, $height = 720)>
     active: 0
 
 Valiknet\CinemaBundle\Entity\Category:
@@ -26,7 +26,7 @@ Valiknet\CinemaBundle\Entity\Actor:
     country: @country*
     movies: 3x @movie*
     description: <realText()>
-    image: <image($dir = 'web/bundles/valiknetcinema/images/actors', $width = 600, $height = 720)>
+    image: <image($dir = 'src/Valiknet/CinemaBundle/Resources/public/images/actors', $width = 600, $height = 720)>
 
 Valiknet\CinemaBundle\Entity\Review:
   review{1..40}:
@@ -44,7 +44,7 @@ Valiknet\CinemaBundle\Entity\Country:
 Valiknet\CinemaBundle\Entity\Poster:
   poster{1..100}:
     movie: @movie*
-    image: <image($dir = 'web/bundles/valiknetcinema/images/posters', $width = 600, $height = 720)>
+    image: <image($dir = 'src/Valiknet/CinemaBundle/Resources/public/images/posters', $width = 600, $height = 720)>
 
 Valiknet\CinemaBundle\Entity\Director:
   director{1..20}:
@@ -52,4 +52,4 @@ Valiknet\CinemaBundle\Entity\Director:
     surname: <lastName()>
     country: @country*
     description: <realText()>
-    image: <image($dir = 'web/bundles/valiknetcinema/images/directors', $width = 600, $height = 720)>
+    image: <image($dir = 'src/Valiknet/CinemaBundle/Resources/public/images/directors', $width = 600, $height = 720)>

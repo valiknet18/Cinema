@@ -49,7 +49,7 @@ class Actor
     protected $dateBirthday;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="actor")
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="actors")
      */
     protected $country;
 

@@ -6,9 +6,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="producer")
+ * @ORM\Table(name="director")
  */
-class Producer
+class Director
 {
     /**
      * @ORM\Column(type="integer", length=6)
@@ -34,9 +34,9 @@ class Producer
     protected $slug;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="producers")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    protected $country;
+    protected $dateBirthday;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -44,12 +44,17 @@ class Producer
     protected $image;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="directors")
+     */
+    protected $country;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="Movie", mappedBy="producer")
+     * @ORM\OneToMany(targetEntity="Movie", mappedBy="director")
      */
     protected $movies;
 
@@ -239,5 +244,28 @@ class Producer
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set dateBirthday
+     *
+     * @param \DateTime $dateBirthday
+     * @return Producer
+     */
+    public function setDateBirthday($dateBirthday)
+    {
+        $this->dateBirthday = $dateBirthday;
+
+        return $this;
+    }
+
+    /**
+     * Get dateBirthday
+     *
+     * @return \DateTime 
+     */
+    public function getDateBirthday()
+    {
+        return $this->dateBirthday;
     }
 }

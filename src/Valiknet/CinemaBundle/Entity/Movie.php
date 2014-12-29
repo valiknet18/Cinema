@@ -1,6 +1,7 @@
 <?php
 namespace Valiknet\CinemaBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,6 +21,7 @@ class Movie
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
      */
     protected $name;
 
@@ -45,6 +47,11 @@ class Movie
     protected $slug;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $basePoster;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $description;
@@ -54,15 +61,15 @@ class Movie
      */
     protected $releasedAt;
 
-//    /**
-//     * @ORM\Column(type="enum")
-//     */
-//    protected $type;
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Producer", inversedBy="movies")
+     * @ORM\ManyToOne(targetEntity="Director", inversedBy="movies")
      */
-    protected $producer;
+    protected $director;
 
     /**
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="movies")
@@ -83,6 +90,11 @@ class Movie
      * @ORM\OneToMany(targetEntity="Poster", mappedBy="movie")
      */
     protected $posters;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    protected $active;
 
     /**
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="movies")
@@ -246,29 +258,6 @@ class Movie
     public function getReleasedAt()
     {
         return $this->releasedAt;
-    }
-
-    /**
-     * Set producer
-     *
-     * @param \Valiknet\CinemaBundle\Entity\Producer $producer
-     * @return Movie
-     */
-    public function setProducer(\Valiknet\CinemaBundle\Entity\Producer $producer = null)
-    {
-        $this->producer = $producer;
-
-        return $this;
-    }
-
-    /**
-     * Get producer
-     *
-     * @return \Valiknet\CinemaBundle\Entity\Producer 
-     */
-    public function getProducer()
-    {
-        return $this->producer;
     }
 
     /**
@@ -447,5 +436,97 @@ class Movie
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set basePoster
+     *
+     * @param string $basePoster
+     * @return Movie
+     */
+    public function setBasePoster($basePoster)
+    {
+        $this->basePoster = $basePoster;
+
+        return $this;
+    }
+
+    /**
+     * Get basePoster
+     *
+     * @return string 
+     */
+    public function getBasePoster()
+    {
+        return $this->basePoster;
+    }
+
+    /**
+     * Set type
+     *
+     * @param integer $type
+     * @return Movie
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return integer 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Movie
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set director
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Director $director
+     * @return Movie
+     */
+    public function setDirector(\Valiknet\CinemaBundle\Entity\Director $director = null)
+    {
+        $this->director = $director;
+
+        return $this;
+    }
+
+    /**
+     * Get director
+     *
+     * @return \Valiknet\CinemaBundle\Entity\Director 
+     */
+    public function getDirector()
+    {
+        return $this->director;
     }
 }

@@ -7,85 +7,136 @@
 {% block content %}
     <div class="col-lg-12">
         <div class="col-lg-12">
-            <h4>
+            <h2 class="name-post">
                 {{ movie.name }}
-            </h4>
+            </h2>
         </div>
-
 
         <div class="col-lg-4">
-            <img src="{{ movie.posters[0].url }}" />
+            <img src="{{ asset(movie.basePoster) }}" class="base-poster"/>
         </div>
 
+        <div class="characters-movie col-lg-8">
+            <div class="col-lg-8">
+                Дата релізу: {{ movie.releasedAt|date('Y-m-d') }}
+            </div>
 
+            <div class="col-lg-8">
+                Тип: <a href="">{{ movie.type|filterTypeCinema }}</a>
+            </div>
 
-        <div class="col-lg-8">
-            Країна: <a href="">{{ movie.country.name  }}</a>
+            <div class="col-lg-8">
+                Країна: <a href="{{ path('valiknet_country_index', {"slug" : movie.country.slug}) }}">{{ movie.country.name  }}</a>
+            </div>
+
+            <div class="col-lg-8">
+                Категорії:
+                {% for category in movie.categories %}
+                    <a href="{{ path('valiknet_category_index', {"slug" : category.slug}) }}" class="btn btn-default">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+
+            <div class="col-lg-8">
+                Режисер: <a href="">{{ movie.director.name }} {{ movie.director.surname }}</a>
+            </div>
+
+            <div class="col-lg-8">
+                Актори:
+                {% for actor in movie.actors %}
+                    <a href="{{ path("valiknet_actor_index", {"slug" : actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
+                {% endfor %}
+            </div>
+
+            <div class="col-lg-8">
+                Рейтинг:
+                <div class="btn btn-success" title="Подобається">
+                    <b>{{ movie.like }}</b>
+                </div>
+                /
+                <div class="btn btn-danger" title="Не подобається">
+                    <b>{{ movie.dislike }}</b>
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-8">
-            Категорії:
-            {% for category in movie.categories %}
-                <a href="">{{ category.name }}</a>
-            {% endfor %}
-        </div>
-
-        <div class="col-lg-8">
-            Режисер: <a href="">{{ movie.producer.name }} {{ movie.producer.surname }}</a>
-        </div>
-
-        <div class="col-lg-8">
-            Актори:
-            {% for actor in movie.actors %}
-                <a href="{{ path("valiknet_actor_index", {"slug" : actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
-            {% endfor %}
-        </div>
-
-        <div class="col-lg-8">
+        <div class="col-lg-12">
+            <h4>
+                Опис:
+            </h4>
             <p>{{ movie.description }}</p>
         </div>
 
-        <div class="col-lg-8">
-            <div class="col-lg-4 btn btn-success">
-                Подобається: <b>{{ movie.like }}</b>
-            </div>
-
-            <div class="col-lg-4 btn btn-danger">
-                Не подобається: <b>{{ movie.dislike }}</b>
-            </div>
-        </div>
-
-        <div class="col-lg-8">
-            Дата релізу: {{ movie.releasedAt|date('Y-m-d') }}
-        </div>
-
-        <div class="col-lg-12">
-            Трейлер:
-        </div>
-
         <div class="col-lg-12">
             <h4>
-                <Рецензії></Рецензії>
+                Трейлер:
             </h4>
         </div>
 
-        {% for review in movie.reviews %}
+        {% if movie.posters %}
+            <div class="col-lg-12">
+                <h4>
+                    Постери:
+                </h4>
+            </div>
+        {% endif %}
+
         <div class="col-lg-12">
-            <div class="col-lg-12">
-                Автор: {{ review.nickname }}
+            <h4>
+                Рецензії:
+            </h4>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <h3>Позитивні</h3>
+                {% for review in reviews[1] %}
+                    <div class="col-lg-12 thumbnail">
+                        <div class="col-lg-12">
+                            Автор: {{ review.nickname }}
+                        </div>
+
+                        <div class="col-lg-12">
+                            <p>
+                                {{ review.text }}
+                            </p>
+                        </div>
+
+                        <div class="col-lg-12">
+                            Дата створення: {{ review.createdAt|date("Y-m-d H:i:s") }}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning">
+                        <p>До цього фільму не написали ні однієї позитивної рецензії</p>
+                    </div>
+                {% endfor %}
             </div>
 
-            <div class="col-lg-12">
-                <p>
-                   {{ review.text }}
-                </p>
-            </div>
+            <div class="col-md-6">
+                <h3>Негативні</h3>
+                {% for review in reviews[0] %}
+                    <div class="col-lg-12 thumbnail">
+                        <div class="col-lg-12">
+                            Автор: {{ review.nickname }}
+                        </div>
 
-            <div class="col-lg-12">
-                Дата створення: {{ review.createdAt|date("Y-m-d H:i:s") }}
+                        <div class="col-lg-12">
+                            <p>
+                                {{ review.text }}
+                            </p>
+                        </div>
+
+                        <div class="col-lg-12">
+                            Дата створення: {{ review.createdAt|date("Y-m-d H:i:s") }}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning">
+                        <p>До цього фільму не написали ні однієї негативної рецензії</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
 
         <div class="col-lg-12">
             <h3>Добавлення нової рецензії</h3>

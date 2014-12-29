@@ -3,6 +3,7 @@ namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
+use Symfony\Component\VarDumper\VarDumper;
 use Valiknet\CinemaBundle\Form\Type\AddReviewType;
 
 class MovieController extends Controller
@@ -25,9 +26,13 @@ class MovieController extends Controller
 
         $form = $this->createForm(new AddReviewType());
 
+        $reviews = $this->get('valiknet.cinema_bundle.services.review_service')
+                        ->splitArray($movie->getReviews());
+
         return [
             "movie" => $movie,
-            "form" => $form->createView()
+            "form" => $form->createView(),
+            "reviews" => $reviews
         ];
     }
 } 

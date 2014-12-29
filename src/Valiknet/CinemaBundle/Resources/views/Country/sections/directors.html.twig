@@ -1,18 +1,20 @@
-{% for actor in country.actors %}
+{% for director in country.directors %}
     <div class="col-lg-12">
         <div class="col-lg-12">
             <h2>
-                <a href="{{ path("valiknet_actor_index", {"slug" : actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
+                <a href="{{ path("valiknet_director_index", {"slug" : director.slug}) }}">
+                    {{ director.name }} {{ director.surname }}
+                </a>
             </h2>
         </div>
 
         <div class="col-lg-4">
-            <img src="{{ actor.image }}" class="actor-image"/>
+            <img src="{{ director.image }}" class="director-image"/>
         </div>
 
         <div class="characters-movie col-lg-8">
             <div class="col-lg-8">
-                Країна: {{ actor.country.name }}
+                Країна: {{ director.country.name }}
             </div>
 
             <div class="col-lg-8">
@@ -21,18 +23,20 @@
 
             <div class="col-lg-12">
                 Перелік фільмів в яких знімається:
-                {% for movie in actor.movies %}
+                {% for movie in director.movies %}
                     <a href="{{ path('valiknet_cinema_homepage', {"slug" : movie.slug}) }}">{{ movie.name }}</a>
                 {% endfor %}
             </div>
         </div>
 
         <div class="col-lg-8">
-            <p>Коротка історія: {{ actor.description }}</p>
+            <p>Коротка історія: {{ director.description }}</p>
         </div>
     </div>
 {% else %}
     <div class="col-lg-12">
-        <h3>В базі немає акторів з цієї країни</h3>
+        <h3>
+            В базі немає режисерів з цієї країни
+        </h3>
     </div>
 {% endfor %}

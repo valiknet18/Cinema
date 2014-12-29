@@ -39,14 +39,19 @@ class Actor
     protected $slug;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="actor")
-     */
-    protected $country;
-
-    /**
      * @ORM\Column(type="text")
      */
     protected $description;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $dateBirthday;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="actors")
+     */
+    protected $country;
 
     /**
      * @ORM\ManyToMany(targetEntity="Movie", inversedBy="actors")
@@ -240,5 +245,28 @@ class Actor
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set dateBirthday
+     *
+     * @param \DateTime $dateBirthday
+     * @return Actor
+     */
+    public function setDateBirthday($dateBirthday)
+    {
+        $this->dateBirthday = $dateBirthday;
+
+        return $this;
+    }
+
+    /**
+     * Get dateBirthday
+     *
+     * @return \DateTime 
+     */
+    public function getDateBirthday()
+    {
+        return $this->dateBirthday;
     }
 }

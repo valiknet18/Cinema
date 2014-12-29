@@ -1,22 +1,22 @@
 {% extends 'ValiknetCinemaBundle:layouts:layout.html.twig' %}
 
 {% block title %}
-    {{ actor.name }} {{ actor.surname }}
+    {{ director.name }} {{ director.surname }}
 {% endblock %}
 
 {% block content %}
     <div class="col-lg-12">
         <div class="col-lg-12">
-            <h2>{{ actor.name }} {{ actor.surname }}</h2>
+            <h2>{{ director.name }} {{ director.surname }}</h2>
         </div>
 
         <div class="col-lg-4">
-            <img src="{{ actor.image }}" class="actor-image"/>
+            <img src="{{ director.image }}" class="director-image"/>
         </div>
 
         <div class="characters-movie col-lg-8">
             <div class="col-lg-8">
-                Країна: {{ actor.country.name }}
+                Країна: <a href="{{ path("valiknet_country_index", {"slug" : director.country.slug}) }}">{{ director.country.name }}</a>
             </div>
 
             <div class="col-lg-8">
@@ -25,14 +25,12 @@
         </div>
 
         <div class="col-lg-8">
-            <p>Коротка історія: {{ actor.description }}</p>
+            <p>Коротка історія: {{ director.description }}</p>
         </div>
 
         <div class="col-lg-12">
-            <h4>
-                Перелік фільмів в яких знімається:
-            </h4>
-            {% for movie in actor.movies %}
+            <h4>Перелік фільмів в яких режисерує:</h4>
+            {% for movie in director.movies %}
                 <div class="col-lg-6">
                     <div class="col-lg-12">
                         <h2>

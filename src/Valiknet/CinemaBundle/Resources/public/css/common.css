@@ -1,3 +1,33 @@
 .container{
     width: 75%;
 }
+
+.name-post {
+    margin-left: 20px;
+}
+
+img.base-poster {
+    width: 270px;
+    height: 360px;
+}
+
+textarea.review-text {
+    height: 200px;
+    resize: none;
+}
+
+.characters-movie > div {
+    padding: 10px 0px;
+    margin: 3px 0px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+img.poster-in-list {
+    width: 140px;
+    height: 200px;
+}
+
+.actor-image, .director-image {
+    width: 270px;
+    height: 360px;
+}

@@ -24,3 +24,7 @@ valiknet_country_index:
     requirements:
       section: movies|actors|producers
 
+valiknet_review_create:
+    path: /review/{slug}/create
+    defaults: { _controller: ValiknetCinemaBundle:Review:create}
+    methods: [POST]

@@ -8,7 +8,14 @@ $(document).on('submit', 'form[name=add_review]', function(e){
         type: $(this).attr("method"),
         data: data,
         success: function (data, dd, options) {
+            switch (options.status) {
+                case 200 :
+                    document.location.href = "";
+                    break;
 
+                default :
+                    alert('Сталася якась помилка')
+            }
         }
     })
 });

@@ -141,9 +141,11 @@
         <div class="col-lg-12">
             <h3>Добавлення нової рецензії</h3>
 
-            {{ form_start(form) }}
-
-            {{ form_end(form) }}
+            <form method="POST" name="add_review" action="{{ path("valiknet_review_create", {"slug" : movie.slug}) }}">
+                <div>
+                    {{ form(form) }}
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}

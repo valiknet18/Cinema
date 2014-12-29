@@ -9,7 +9,6 @@ class AddReviewType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->setAction("")
             ->add('nickname', 'text', [
                 "label" => "Нікнейм"
             ])
@@ -25,8 +24,8 @@ class AddReviewType extends AbstractType
             ])
             ->add('type', 'choice', [
                 'choices' => [
-                    "Подобається",
-                    "Не подобається"
+                    "Не подобається",
+                    "Подобається"
                 ],
                 "label" => "Вердикт"
             ])

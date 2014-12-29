@@ -17,16 +17,16 @@ class ReviewController extends Controller
 
         $review = new Review();
 
-        $review->setMovie(
-            $em->getRepository('ValiknetCinemaBundle:Movie')
-            ->findOneBySlug($slug)
-        );
-
         $form = $this->createForm(new AddReviewType(), $review);
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $review->setMovie(
+                $em->getRepository('ValiknetCinemaBundle:Movie')
+                    ->findOneBySlug($slug)
+            );
+
             $em->persist($review);
             $em->flush();
 

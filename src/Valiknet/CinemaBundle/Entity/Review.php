@@ -144,6 +144,12 @@ class Review
     {
         $this->movie = $movie;
 
+        if ($this->type) {
+            $movie->setLike($movie->getLike() + 1);
+        } else {
+            $movie->setDislike($movie->getDislike() + 1);
+        }
+
         return $this;
     }
 

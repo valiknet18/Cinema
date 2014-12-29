@@ -19,7 +19,7 @@ class Poster
     /**
      * @ORM\Column(type="text")
      */
-    protected $url;
+    protected $image;
 
     /**
      * @ORM\ManyToOne(targetEntity="Movie", inversedBy="posters")
@@ -34,29 +34,6 @@ class Poster
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     * @return Poster
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string 
-     */
-    public function getUrl()
-    {
-        return $this->url;
     }
 
     /**

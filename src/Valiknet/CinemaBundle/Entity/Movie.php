@@ -67,9 +67,9 @@ class Movie
     protected $type;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Producer", inversedBy="movies")
+     * @ORM\ManyToOne(targetEntity="Director", inversedBy="movies")
      */
-    protected $producer;
+    protected $director;
 
     /**
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="movies")
@@ -92,7 +92,7 @@ class Movie
     protected $posters;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     protected $active;
 
@@ -258,29 +258,6 @@ class Movie
     public function getReleasedAt()
     {
         return $this->releasedAt;
-    }
-
-    /**
-     * Set producer
-     *
-     * @param \Valiknet\CinemaBundle\Entity\Producer $producer
-     * @return Movie
-     */
-    public function setProducer(\Valiknet\CinemaBundle\Entity\Producer $producer = null)
-    {
-        $this->producer = $producer;
-
-        return $this;
-    }
-
-    /**
-     * Get producer
-     *
-     * @return \Valiknet\CinemaBundle\Entity\Producer 
-     */
-    public function getProducer()
-    {
-        return $this->producer;
     }
 
     /**
@@ -528,5 +505,28 @@ class Movie
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Set director
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Director $director
+     * @return Movie
+     */
+    public function setDirector(\Valiknet\CinemaBundle\Entity\Director $director = null)
+    {
+        $this->director = $director;
+
+        return $this;
+    }
+
+    /**
+     * Get director
+     *
+     * @return \Valiknet\CinemaBundle\Entity\Director 
+     */
+    public function getDirector()
+    {
+        return $this->director;
     }
 }

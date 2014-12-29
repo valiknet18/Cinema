@@ -44,7 +44,7 @@ class Actor
     protected $description;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $dateBirthday;
 

@@ -6,9 +6,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="producer")
+ * @ORM\Table(name="director")
  */
-class Producer
+class Director
 {
     /**
      * @ORM\Column(type="integer", length=6)
@@ -34,7 +34,7 @@ class Producer
     protected $slug;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     protected $dateBirthday;
 
@@ -44,7 +44,7 @@ class Producer
     protected $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="producers")
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="directors")
      */
     protected $country;
 
@@ -54,7 +54,7 @@ class Producer
     protected $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="Movie", mappedBy="producer")
+     * @ORM\OneToMany(targetEntity="Movie", mappedBy="director")
      */
     protected $movies;
 

@@ -39,9 +39,9 @@ class Country
     protected $actors;
 
     /**
-     * @ORM\OneToMany(targetEntity="Producer", mappedBy="country")
+     * @ORM\OneToMany(targetEntity="Director", mappedBy="country")
      */
-    protected $producers;
+    protected $directors;
     /**
      * Constructor
      */
@@ -49,7 +49,7 @@ class Country
     {
         $this->movies = new \Doctrine\Common\Collections\ArrayCollection();
         $this->actors = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->producers = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->directors = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -63,26 +63,49 @@ class Country
     }
 
     /**
-     * Set url
+     * Set name
      *
-     * @param string $url
+     * @param string $name
      * @return Country
      */
-    public function setUrl($url)
+    public function setName($name)
     {
-        $this->url = $url;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get name
      *
      * @return string 
      */
-    public function getUrl()
+    public function getName()
     {
-        return $this->url;
+        return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Country
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -152,81 +175,35 @@ class Country
     }
 
     /**
-     * Add producers
+     * Add directors
      *
-     * @param \Valiknet\CinemaBundle\Entity\Producer $producers
+     * @param \Valiknet\CinemaBundle\Entity\Director $directors
      * @return Country
      */
-    public function addProducer(\Valiknet\CinemaBundle\Entity\Producer $producers)
+    public function addDirector(\Valiknet\CinemaBundle\Entity\Director $directors)
     {
-        $this->producers[] = $producers;
+        $this->directors[] = $directors;
 
         return $this;
     }
 
     /**
-     * Remove producers
+     * Remove directors
      *
-     * @param \Valiknet\CinemaBundle\Entity\Producer $producers
+     * @param \Valiknet\CinemaBundle\Entity\Director $directors
      */
-    public function removeProducer(\Valiknet\CinemaBundle\Entity\Producer $producers)
+    public function removeDirector(\Valiknet\CinemaBundle\Entity\Director $directors)
     {
-        $this->producers->removeElement($producers);
+        $this->directors->removeElement($directors);
     }
 
     /**
-     * Get producers
+     * Get directors
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getProducers()
+    public function getDirectors()
     {
-        return $this->producers;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Country
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Country
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
+        return $this->directors;
     }
 }

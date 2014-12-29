@@ -59,6 +59,11 @@ class Director
     protected $movies;
 
     /**
+     * @ORM\OneToOne(targetEntity="Proposal", mappedBy="director")
+     */
+    protected $proposal;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -267,5 +272,28 @@ class Director
     public function getDateBirthday()
     {
         return $this->dateBirthday;
+    }
+
+    /**
+     * Set proposal
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Proposal $proposal
+     * @return Director
+     */
+    public function setProposal(\Valiknet\CinemaBundle\Entity\Proposal $proposal = null)
+    {
+        $this->proposal = $proposal;
+
+        return $this;
+    }
+
+    /**
+     * Get proposal
+     *
+     * @return \Valiknet\CinemaBundle\Entity\Proposal 
+     */
+    public function getProposal()
+    {
+        return $this->proposal;
     }
 }

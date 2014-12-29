@@ -59,6 +59,11 @@ class Actor
     protected $movies;
 
     /**
+     * @ORM\OneToOne(targetEntity="Proposal", mappedBy="actor")
+     */
+    protected $proposal;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -268,5 +273,28 @@ class Actor
     public function getDateBirthday()
     {
         return $this->dateBirthday;
+    }
+
+    /**
+     * Set proposal
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Proposal $proposal
+     * @return Actor
+     */
+    public function setProposal(\Valiknet\CinemaBundle\Entity\Proposal $proposal = null)
+    {
+        $this->proposal = $proposal;
+
+        return $this;
+    }
+
+    /**
+     * Get proposal
+     *
+     * @return \Valiknet\CinemaBundle\Entity\Proposal 
+     */
+    public function getProposal()
+    {
+        return $this->proposal;
     }
 }

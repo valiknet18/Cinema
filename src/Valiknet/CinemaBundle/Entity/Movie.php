@@ -102,6 +102,11 @@ class Movie
     protected $categories;
 
     /**
+     * @ORM\OneToOne(targetEntity="Proposal", mappedBy="movie")
+     */
+    protected $proposal;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -528,5 +533,28 @@ class Movie
     public function getDirector()
     {
         return $this->director;
+    }
+
+    /**
+     * Set proposal
+     *
+     * @param \Valiknet\CinemaBundle\Entity\Proposal $proposal
+     * @return Movie
+     */
+    public function setProposal(\Valiknet\CinemaBundle\Entity\Proposal $proposal = null)
+    {
+        $this->proposal = $proposal;
+
+        return $this;
+    }
+
+    /**
+     * Get proposal
+     *
+     * @return \Valiknet\CinemaBundle\Entity\Proposal 
+     */
+    public function getProposal()
+    {
+        return $this->proposal;
     }
 }

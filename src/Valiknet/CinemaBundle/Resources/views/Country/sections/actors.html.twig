@@ -1,7 +1,9 @@
 {% for actor in country.actors %}
     <div class="col-lg-12">
         <div class="col-lg-12">
-            <h2>{{ actor.name }} {{ actor.surname }}</h2>
+            <h2>
+                <a href="{{ path("valiknet_actor_index", {"slug" : actor.slug}) }}">{{ actor.name }} {{ actor.surname }}</a>
+            </h2>
         </div>
 
         <div class="col-lg-4">

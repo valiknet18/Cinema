@@ -11,6 +11,10 @@ valiknet_actor_index:
     path: /actor/{slug}
     defaults: { _controller: ValiknetCinemaBundle:Actor:get }
 
+valiknet_actor_index:
+    path: /actor/{slug}
+    defaults: { _controller: ValiknetCinemaBundle:Actor:get }
+
 valiknet_category_index:
     path: /category/{slug}
     defaults: { _controller: ValiknetCinemaBundle:Category:index }
@@ -20,3 +24,4 @@ valiknet_country_index:
     defaults: { _controller: ValiknetCinemaBundle:Country:index, section: movies }
     requirements:
       section: movies|actors|producers
+

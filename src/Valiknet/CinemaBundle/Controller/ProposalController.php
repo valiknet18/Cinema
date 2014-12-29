@@ -4,6 +4,7 @@ namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
+use Valiknet\CinemaBundle\Form\Type\AddProposalMovieType;
 
 class ProposalController extends Controller
 {
@@ -20,7 +21,12 @@ class ProposalController extends Controller
      */
     public function movieAction()
     {
-        return [];
+
+        $form = $this->createForm(new AddProposalMovieType());
+
+        return [
+            "form" => $form->createView()
+        ];
     }
 
     /**

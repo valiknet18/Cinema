@@ -25,4 +25,4 @@ class MovieRepository extends EntityRepository
 
         return $film;
     }
-} 
+}

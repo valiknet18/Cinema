@@ -17,4 +17,4 @@ class IndexController extends Controller
                 "movies" => $movies
         ];
     }
-} 
+}

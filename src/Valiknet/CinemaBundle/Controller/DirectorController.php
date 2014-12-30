@@ -2,7 +2,6 @@
 namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
 
 class DirectorController extends Controller
@@ -18,7 +17,7 @@ class DirectorController extends Controller
                 ->findOneBySlug($slug);
 
         return array(
-            'director' => $director
+            'director' => $director,
         );
     }
 

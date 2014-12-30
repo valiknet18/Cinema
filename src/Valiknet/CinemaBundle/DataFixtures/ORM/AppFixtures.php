@@ -2,7 +2,6 @@
 namespace Valiknet\CinemaBundle\DataFixtures\ORM;
 
 use Hautelook\AliceBundle\Alice\DataFixtureLoader;
-use Nelmio\Alice\Fixtures;
 
 class AppFixtures extends DataFixtureLoader
 {
@@ -12,7 +11,7 @@ class AppFixtures extends DataFixtureLoader
     protected function getFixtures()
     {
         return  array(
-            __DIR__ . '/movie.yml',
+            __DIR__.'/movie.yml',
         );
     }
 }

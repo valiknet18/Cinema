@@ -8,7 +8,7 @@ class CountryService
         $sections = [
             'movies',
             'producers',
-            'actors'
+            'actors',
         ];
 
         if (in_array($section, $sections)) {
@@ -17,4 +17,4 @@ class CountryService
 
         return false;
     }
-} 
+}

@@ -2,7 +2,6 @@
 namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
 
 class ActorController extends Controller
@@ -18,7 +17,7 @@ class ActorController extends Controller
                 ->findOneBySlug($slug);
 
         return array(
-            'actor' => $actor
+            'actor' => $actor,
         );
     }
 

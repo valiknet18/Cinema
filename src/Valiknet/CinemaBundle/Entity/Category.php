@@ -33,7 +33,6 @@ class Category
      */
     protected $movies;
 
-
     /**
      * Constructor
      */
@@ -45,7 +44,7 @@ class Category
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,7 +54,7 @@ class Category
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string   $name
      * @return Category
      */
     public function setName($name)
@@ -68,7 +67,7 @@ class Category
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -78,7 +77,7 @@ class Category
     /**
      * Add movies
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movies
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movies
      * @return Category
      */
     public function addMovie(\Valiknet\CinemaBundle\Entity\Movie $movies)
@@ -101,7 +100,7 @@ class Category
     /**
      * Get movies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMovies()
     {
@@ -111,7 +110,7 @@ class Category
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string   $slug
      * @return Category
      */
     public function setSlug($slug)
@@ -124,7 +123,7 @@ class Category
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {

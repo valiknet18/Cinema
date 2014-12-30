@@ -3,7 +3,6 @@ namespace Valiknet\CinemaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template as Template;
-use Symfony\Component\VarDumper\VarDumper;
 use Valiknet\CinemaBundle\Form\Type\AddReviewType;
 
 class MovieController extends Controller
@@ -18,7 +17,7 @@ class MovieController extends Controller
                     ->getRepository('ValiknetCinemaBundle:Movie')
                     ->findOneBySlug($slug);
 
-        if(!$movie){
+        if (!$movie) {
             throw $this->createNotFoundException(
                 'Такого фільму немає в базі'
             );
@@ -35,4 +34,4 @@ class MovieController extends Controller
             "reviews" => $reviews
         ];
     }
-} 
+}

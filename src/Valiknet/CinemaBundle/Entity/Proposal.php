@@ -51,7 +51,7 @@ class Proposal
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -61,7 +61,7 @@ class Proposal
     /**
      * Set type
      *
-     * @param integer $type
+     * @param  integer  $type
      * @return Proposal
      */
     public function setType($type)
@@ -74,7 +74,7 @@ class Proposal
     /**
      * Get type
      *
-     * @return integer 
+     * @return integer
      */
     public function getType()
     {
@@ -84,7 +84,7 @@ class Proposal
     /**
      * Set movie
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movie
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movie
      * @return Proposal
      */
     public function setMovie(\Valiknet\CinemaBundle\Entity\Movie $movie = null)
@@ -97,7 +97,7 @@ class Proposal
     /**
      * Get movie
      *
-     * @return \Valiknet\CinemaBundle\Entity\Movie 
+     * @return \Valiknet\CinemaBundle\Entity\Movie
      */
     public function getMovie()
     {
@@ -107,7 +107,7 @@ class Proposal
     /**
      * Set actor
      *
-     * @param \Valiknet\CinemaBundle\Entity\Actor $actor
+     * @param  \Valiknet\CinemaBundle\Entity\Actor $actor
      * @return Proposal
      */
     public function setActor(\Valiknet\CinemaBundle\Entity\Actor $actor = null)
@@ -120,7 +120,7 @@ class Proposal
     /**
      * Get actor
      *
-     * @return \Valiknet\CinemaBundle\Entity\Actor 
+     * @return \Valiknet\CinemaBundle\Entity\Actor
      */
     public function getActor()
     {
@@ -130,7 +130,7 @@ class Proposal
     /**
      * Set director
      *
-     * @param \Valiknet\CinemaBundle\Entity\Director $director
+     * @param  \Valiknet\CinemaBundle\Entity\Director $director
      * @return Proposal
      */
     public function setDirector(\Valiknet\CinemaBundle\Entity\Director $director = null)
@@ -143,7 +143,7 @@ class Proposal
     /**
      * Get director
      *
-     * @return \Valiknet\CinemaBundle\Entity\Director 
+     * @return \Valiknet\CinemaBundle\Entity\Director
      */
     public function getDirector()
     {
@@ -153,7 +153,7 @@ class Proposal
     /**
      * Set email
      *
-     * @param string $email
+     * @param  string   $email
      * @return Proposal
      */
     public function setEmail($email)
@@ -166,7 +166,7 @@ class Proposal
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {

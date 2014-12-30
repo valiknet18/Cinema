@@ -29,7 +29,7 @@ class Poster
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -39,7 +39,7 @@ class Poster
     /**
      * Set movie
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movie
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movie
      * @return Poster
      */
     public function setMovie(\Valiknet\CinemaBundle\Entity\Movie $movie = null)
@@ -52,7 +52,7 @@ class Poster
     /**
      * Get movie
      *
-     * @return \Valiknet\CinemaBundle\Entity\Movie 
+     * @return \Valiknet\CinemaBundle\Entity\Movie
      */
     public function getMovie()
     {
@@ -62,7 +62,7 @@ class Poster
     /**
      * Set image
      *
-     * @param string $image
+     * @param  string $image
      * @return Poster
      */
     public function setImage($image)
@@ -75,7 +75,7 @@ class Poster
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {

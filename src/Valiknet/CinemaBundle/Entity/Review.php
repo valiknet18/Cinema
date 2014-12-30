@@ -58,7 +58,7 @@ class Review
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -68,7 +68,7 @@ class Review
     /**
      * Set nickname
      *
-     * @param string $nickname
+     * @param  string $nickname
      * @return Review
      */
     public function setNickname($nickname)
@@ -81,7 +81,7 @@ class Review
     /**
      * Get nickname
      *
-     * @return string 
+     * @return string
      */
     public function getNickname()
     {
@@ -91,7 +91,7 @@ class Review
     /**
      * Set text
      *
-     * @param string $text
+     * @param  string $text
      * @return Review
      */
     public function setText($text)
@@ -104,7 +104,7 @@ class Review
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -114,7 +114,7 @@ class Review
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param  \DateTime $createdAt
      * @return Review
      */
     public function setCreatedAt($createdAt)
@@ -127,7 +127,7 @@ class Review
     /**
      * Get createdAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -137,7 +137,7 @@ class Review
     /**
      * Set movie
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movie
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movie
      * @return Review
      */
     public function setMovie(\Valiknet\CinemaBundle\Entity\Movie $movie = null)
@@ -150,7 +150,7 @@ class Review
     /**
      * Get movie
      *
-     * @return \Valiknet\CinemaBundle\Entity\Movie 
+     * @return \Valiknet\CinemaBundle\Entity\Movie
      */
     public function getMovie()
     {
@@ -160,7 +160,7 @@ class Review
     /**
      * Set type
      *
-     * @param boolean $type
+     * @param  boolean $type
      * @return Review
      */
     public function setType($type)
@@ -173,7 +173,7 @@ class Review
     /**
      * Get type
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getType()
     {
@@ -183,7 +183,7 @@ class Review
     /**
      * Set email
      *
-     * @param string $email
+     * @param  string $email
      * @return Review
      */
     public function setEmail($email)
@@ -196,7 +196,7 @@ class Review
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {

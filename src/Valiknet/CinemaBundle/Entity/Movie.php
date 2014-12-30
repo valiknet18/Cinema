@@ -11,7 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Movie
 {
-
     /**
      * @ORM\Id
      * @ORM\Column(type="integer", length=6)
@@ -120,7 +119,7 @@ class Movie
     /**
      * Get id
      *
-     * @return \6 
+     * @return \6
      */
     public function getId()
     {
@@ -130,7 +129,7 @@ class Movie
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Movie
      */
     public function setName($name)
@@ -143,7 +142,7 @@ class Movie
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -153,7 +152,7 @@ class Movie
     /**
      * Set like
      *
-     * @param integer $like
+     * @param  integer $like
      * @return Movie
      */
     public function setLike($like)
@@ -166,7 +165,7 @@ class Movie
     /**
      * Get like
      *
-     * @return integer 
+     * @return integer
      */
     public function getLike()
     {
@@ -176,7 +175,7 @@ class Movie
     /**
      * Set dislike
      *
-     * @param integer $dislike
+     * @param  integer $dislike
      * @return Movie
      */
     public function setDislike($dislike)
@@ -189,7 +188,7 @@ class Movie
     /**
      * Get dislike
      *
-     * @return integer 
+     * @return integer
      */
     public function getDislike()
     {
@@ -199,7 +198,7 @@ class Movie
     /**
      * Set trailer
      *
-     * @param string $trailer
+     * @param  string $trailer
      * @return Movie
      */
     public function setTrailer($trailer)
@@ -212,7 +211,7 @@ class Movie
     /**
      * Get trailer
      *
-     * @return string 
+     * @return string
      */
     public function getTrailer()
     {
@@ -222,7 +221,7 @@ class Movie
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string $slug
      * @return Movie
      */
     public function setSlug($slug)
@@ -235,7 +234,7 @@ class Movie
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -245,7 +244,7 @@ class Movie
     /**
      * Set releasedAt
      *
-     * @param \DateTime $releasedAt
+     * @param  \DateTime $releasedAt
      * @return Movie
      */
     public function setReleasedAt($releasedAt)
@@ -258,7 +257,7 @@ class Movie
     /**
      * Get releasedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getReleasedAt()
     {
@@ -268,7 +267,7 @@ class Movie
     /**
      * Set country
      *
-     * @param \Valiknet\CinemaBundle\Entity\Country $country
+     * @param  \Valiknet\CinemaBundle\Entity\Country $country
      * @return Movie
      */
     public function setCountry(\Valiknet\CinemaBundle\Entity\Country $country = null)
@@ -281,7 +280,7 @@ class Movie
     /**
      * Get country
      *
-     * @return \Valiknet\CinemaBundle\Entity\Country 
+     * @return \Valiknet\CinemaBundle\Entity\Country
      */
     public function getCountry()
     {
@@ -291,7 +290,7 @@ class Movie
     /**
      * Add actors
      *
-     * @param \Valiknet\CinemaBundle\Entity\Actor $actors
+     * @param  \Valiknet\CinemaBundle\Entity\Actor $actors
      * @return Movie
      */
     public function addActor(\Valiknet\CinemaBundle\Entity\Actor $actors)
@@ -314,7 +313,7 @@ class Movie
     /**
      * Get actors
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getActors()
     {
@@ -324,7 +323,7 @@ class Movie
     /**
      * Add reviews
      *
-     * @param \Valiknet\CinemaBundle\Entity\Review $reviews
+     * @param  \Valiknet\CinemaBundle\Entity\Review $reviews
      * @return Movie
      */
     public function addReview(\Valiknet\CinemaBundle\Entity\Review $reviews)
@@ -347,7 +346,7 @@ class Movie
     /**
      * Get reviews
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getReviews()
     {
@@ -357,7 +356,7 @@ class Movie
     /**
      * Add posters
      *
-     * @param \Valiknet\CinemaBundle\Entity\Poster $posters
+     * @param  \Valiknet\CinemaBundle\Entity\Poster $posters
      * @return Movie
      */
     public function addPoster(\Valiknet\CinemaBundle\Entity\Poster $posters)
@@ -380,7 +379,7 @@ class Movie
     /**
      * Get posters
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPosters()
     {
@@ -390,7 +389,7 @@ class Movie
     /**
      * Add categories
      *
-     * @param \Valiknet\CinemaBundle\Entity\Category $categories
+     * @param  \Valiknet\CinemaBundle\Entity\Category $categories
      * @return Movie
      */
     public function addCategory(\Valiknet\CinemaBundle\Entity\Category $categories)
@@ -413,7 +412,7 @@ class Movie
     /**
      * Get categories
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCategories()
     {
@@ -423,7 +422,7 @@ class Movie
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Movie
      */
     public function setDescription($description)
@@ -436,7 +435,7 @@ class Movie
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -446,7 +445,7 @@ class Movie
     /**
      * Set basePoster
      *
-     * @param string $basePoster
+     * @param  string $basePoster
      * @return Movie
      */
     public function setBasePoster($basePoster)
@@ -459,7 +458,7 @@ class Movie
     /**
      * Get basePoster
      *
-     * @return string 
+     * @return string
      */
     public function getBasePoster()
     {
@@ -469,7 +468,7 @@ class Movie
     /**
      * Set type
      *
-     * @param integer $type
+     * @param  integer $type
      * @return Movie
      */
     public function setType($type)
@@ -482,7 +481,7 @@ class Movie
     /**
      * Get type
      *
-     * @return integer 
+     * @return integer
      */
     public function getType()
     {
@@ -492,7 +491,7 @@ class Movie
     /**
      * Set active
      *
-     * @param boolean $active
+     * @param  boolean $active
      * @return Movie
      */
     public function setActive($active)
@@ -505,7 +504,7 @@ class Movie
     /**
      * Get active
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getActive()
     {
@@ -515,7 +514,7 @@ class Movie
     /**
      * Set director
      *
-     * @param \Valiknet\CinemaBundle\Entity\Director $director
+     * @param  \Valiknet\CinemaBundle\Entity\Director $director
      * @return Movie
      */
     public function setDirector(\Valiknet\CinemaBundle\Entity\Director $director = null)
@@ -528,7 +527,7 @@ class Movie
     /**
      * Get director
      *
-     * @return \Valiknet\CinemaBundle\Entity\Director 
+     * @return \Valiknet\CinemaBundle\Entity\Director
      */
     public function getDirector()
     {
@@ -538,7 +537,7 @@ class Movie
     /**
      * Set proposal
      *
-     * @param \Valiknet\CinemaBundle\Entity\Proposal $proposal
+     * @param  \Valiknet\CinemaBundle\Entity\Proposal $proposal
      * @return Movie
      */
     public function setProposal(\Valiknet\CinemaBundle\Entity\Proposal $proposal = null)
@@ -551,7 +550,7 @@ class Movie
     /**
      * Get proposal
      *
-     * @return \Valiknet\CinemaBundle\Entity\Proposal 
+     * @return \Valiknet\CinemaBundle\Entity\Proposal
      */
     public function getProposal()
     {

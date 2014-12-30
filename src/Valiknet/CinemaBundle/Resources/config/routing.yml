@@ -39,4 +39,3 @@ valiknet_proposal_actor:
 valiknet_proposal_director:
   path: /proposal/director
   defaults: { _controller: ValiknetCinemaBundle:Proposal:director}
-

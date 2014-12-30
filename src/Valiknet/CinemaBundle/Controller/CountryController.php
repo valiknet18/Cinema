@@ -17,7 +17,6 @@ class CountryController extends Controller
                 ->getRepository('ValiknetCinemaBundle:Country')
                 ->findOneBySlug($slug);
 
-
         if ($this->get('valiknet.cinema_bundle.services.country_service')->assertSection($section) && $country) {
             return [
                 'country' => $country,

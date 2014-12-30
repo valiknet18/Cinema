@@ -55,7 +55,7 @@ class Country
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -65,7 +65,7 @@ class Country
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string  $name
      * @return Country
      */
     public function setName($name)
@@ -78,7 +78,7 @@ class Country
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -88,7 +88,7 @@ class Country
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string  $slug
      * @return Country
      */
     public function setSlug($slug)
@@ -101,7 +101,7 @@ class Country
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -111,7 +111,7 @@ class Country
     /**
      * Add movies
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movies
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movies
      * @return Country
      */
     public function addMovie(\Valiknet\CinemaBundle\Entity\Movie $movies)
@@ -134,7 +134,7 @@ class Country
     /**
      * Get movies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMovies()
     {
@@ -144,7 +144,7 @@ class Country
     /**
      * Add actors
      *
-     * @param \Valiknet\CinemaBundle\Entity\Actor $actors
+     * @param  \Valiknet\CinemaBundle\Entity\Actor $actors
      * @return Country
      */
     public function addActor(\Valiknet\CinemaBundle\Entity\Actor $actors)
@@ -167,7 +167,7 @@ class Country
     /**
      * Get actors
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getActors()
     {
@@ -177,7 +177,7 @@ class Country
     /**
      * Add directors
      *
-     * @param \Valiknet\CinemaBundle\Entity\Director $directors
+     * @param  \Valiknet\CinemaBundle\Entity\Director $directors
      * @return Country
      */
     public function addDirector(\Valiknet\CinemaBundle\Entity\Director $directors)
@@ -200,7 +200,7 @@ class Country
     /**
      * Get directors
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getDirectors()
     {

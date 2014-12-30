@@ -66,7 +66,7 @@ class Director
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +76,7 @@ class Director
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string   $name
      * @return Producer
      */
     public function setName($name)
@@ -89,7 +89,7 @@ class Director
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -99,7 +99,7 @@ class Director
     /**
      * Set surname
      *
-     * @param string $surname
+     * @param  string   $surname
      * @return Producer
      */
     public function setSurname($surname)
@@ -112,7 +112,7 @@ class Director
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -122,7 +122,7 @@ class Director
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string   $slug
      * @return Producer
      */
     public function setSlug($slug)
@@ -135,7 +135,7 @@ class Director
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -145,7 +145,7 @@ class Director
     /**
      * Set country
      *
-     * @param \Valiknet\CinemaBundle\Entity\Country $country
+     * @param  \Valiknet\CinemaBundle\Entity\Country $country
      * @return Producer
      */
     public function setCountry(\Valiknet\CinemaBundle\Entity\Country $country = null)
@@ -158,7 +158,7 @@ class Director
     /**
      * Get country
      *
-     * @return \Valiknet\CinemaBundle\Entity\Country 
+     * @return \Valiknet\CinemaBundle\Entity\Country
      */
     public function getCountry()
     {
@@ -175,7 +175,7 @@ class Director
     /**
      * Add movies
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movies
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movies
      * @return Producer
      */
     public function addMovie(\Valiknet\CinemaBundle\Entity\Movie $movies)
@@ -198,7 +198,7 @@ class Director
     /**
      * Get movies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMovies()
     {
@@ -208,7 +208,7 @@ class Director
     /**
      * Set image
      *
-     * @param string $image
+     * @param  string   $image
      * @return Producer
      */
     public function setImage($image)
@@ -221,7 +221,7 @@ class Director
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {
@@ -231,7 +231,7 @@ class Director
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string   $description
      * @return Producer
      */
     public function setDescription($description)
@@ -244,7 +244,7 @@ class Director
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -254,7 +254,7 @@ class Director
     /**
      * Set dateBirthday
      *
-     * @param \DateTime $dateBirthday
+     * @param  \DateTime $dateBirthday
      * @return Producer
      */
     public function setDateBirthday($dateBirthday)
@@ -267,7 +267,7 @@ class Director
     /**
      * Get dateBirthday
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateBirthday()
     {
@@ -277,7 +277,7 @@ class Director
     /**
      * Set proposal
      *
-     * @param \Valiknet\CinemaBundle\Entity\Proposal $proposal
+     * @param  \Valiknet\CinemaBundle\Entity\Proposal $proposal
      * @return Director
      */
     public function setProposal(\Valiknet\CinemaBundle\Entity\Proposal $proposal = null)
@@ -290,7 +290,7 @@ class Director
     /**
      * Get proposal
      *
-     * @return \Valiknet\CinemaBundle\Entity\Proposal 
+     * @return \Valiknet\CinemaBundle\Entity\Proposal
      */
     public function getProposal()
     {
@@ -299,6 +299,6 @@ class Director
 
     public function __toString()
     {
-        return $this->name . " " . $this->surname;
+        return $this->name." ".$this->surname;
     }
 }

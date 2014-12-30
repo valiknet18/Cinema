@@ -74,7 +74,7 @@ class Actor
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -84,7 +84,7 @@ class Actor
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Actor
      */
     public function setName($name)
@@ -97,7 +97,7 @@ class Actor
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -107,7 +107,7 @@ class Actor
     /**
      * Set surname
      *
-     * @param string $surname
+     * @param  string $surname
      * @return Actor
      */
     public function setSurname($surname)
@@ -120,7 +120,7 @@ class Actor
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -130,7 +130,7 @@ class Actor
     /**
      * Set country
      *
-     * @param \Valiknet\CinemaBundle\Entity\Country $country
+     * @param  \Valiknet\CinemaBundle\Entity\Country $country
      * @return Actor
      */
     public function setCountry(\Valiknet\CinemaBundle\Entity\Country $country = null)
@@ -143,7 +143,7 @@ class Actor
     /**
      * Get country
      *
-     * @return \Valiknet\CinemaBundle\Entity\Country 
+     * @return \Valiknet\CinemaBundle\Entity\Country
      */
     public function getCountry()
     {
@@ -153,7 +153,7 @@ class Actor
     /**
      * Add movies
      *
-     * @param \Valiknet\CinemaBundle\Entity\Movie $movies
+     * @param  \Valiknet\CinemaBundle\Entity\Movie $movies
      * @return Actor
      */
     public function addMovie(\Valiknet\CinemaBundle\Entity\Movie $movies)
@@ -176,7 +176,7 @@ class Actor
     /**
      * Get movies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMovies()
     {
@@ -186,7 +186,7 @@ class Actor
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string $slug
      * @return Actor
      */
     public function setSlug($slug)
@@ -199,7 +199,7 @@ class Actor
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -209,7 +209,7 @@ class Actor
     /**
      * Set image
      *
-     * @param string $image
+     * @param  string $image
      * @return Actor
      */
     public function setImage($image)
@@ -222,7 +222,7 @@ class Actor
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {
@@ -232,7 +232,7 @@ class Actor
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Actor
      */
     public function setDescription($description)
@@ -245,7 +245,7 @@ class Actor
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -255,7 +255,7 @@ class Actor
     /**
      * Set dateBirthday
      *
-     * @param \DateTime $dateBirthday
+     * @param  \DateTime $dateBirthday
      * @return Actor
      */
     public function setDateBirthday($dateBirthday)
@@ -268,7 +268,7 @@ class Actor
     /**
      * Get dateBirthday
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateBirthday()
     {
@@ -278,7 +278,7 @@ class Actor
     /**
      * Set proposal
      *
-     * @param \Valiknet\CinemaBundle\Entity\Proposal $proposal
+     * @param  \Valiknet\CinemaBundle\Entity\Proposal $proposal
      * @return Actor
      */
     public function setProposal(\Valiknet\CinemaBundle\Entity\Proposal $proposal = null)
@@ -291,7 +291,7 @@ class Actor
     /**
      * Get proposal
      *
-     * @return \Valiknet\CinemaBundle\Entity\Proposal 
+     * @return \Valiknet\CinemaBundle\Entity\Proposal
      */
     public function getProposal()
     {
@@ -300,6 +300,6 @@ class Actor
 
     public function __toString()
     {
-        return $this->name . " " . $this->surname;
+        return $this->name." ".$this->surname;
     }
 }

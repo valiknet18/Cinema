@@ -21,7 +21,6 @@ class ProposalController extends Controller
      */
     public function movieAction()
     {
-
         $form = $this->createForm(new AddProposalMovieType());
 
         return [

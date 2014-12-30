@@ -8,13 +8,17 @@ class AddProposalMovieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email')
-                ->add('movie', new AddMovieType())
-                ->add('type', 'hidden', [
-                    'attr' => [
-                        "value" => 1
-                    ]
-                ]);
+        $builder
+            ->add('email', 'email', [
+                    'label' => 'Введіть ваш email, для того щоб ми могли вам повідомити що цей фільм добавлений'
+                ]
+            )
+            ->add('movie', new AddMovieType())
+            ->add('type', 'hidden', [
+                'attr' => [
+                    "value" => 1,
+                ]
+            ]);
     }
 
     public function getName()

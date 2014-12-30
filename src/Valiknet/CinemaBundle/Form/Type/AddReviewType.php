@@ -3,7 +3,6 @@ namespace Valiknet\CinemaBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AddReviewType extends AbstractType
 {
@@ -20,20 +19,20 @@ class AddReviewType extends AbstractType
             ->add('text', 'textarea', [
                 'max_length' => 255,
                 'attr' => [
-                    'class' => 'review-text'
+                    'class' => 'review-text',
                 ],
                 "label" => "Текст рецензії"
             ])
             ->add('type', 'choice', [
                 'choices' => [
                     "Подобається",
-                    "Не подобається"
+                    "Не подобається",
                 ],
                 "label" => "Вердикт"
             ])
             ->add('Зберегти', 'submit', [
                 'attr' => [
-                    "class" => "btn-default"
+                    "class" => "btn-default",
                 ]
             ]);
     }

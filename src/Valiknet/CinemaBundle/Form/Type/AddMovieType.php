@@ -3,6 +3,7 @@ namespace Valiknet\CinemaBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AddMovieType extends AbstractType
 {
@@ -12,12 +13,19 @@ class AddMovieType extends AbstractType
                 ->add('trailer')
                 ->add('basePoster', 'file')
                 ->add('description')
-                ->add('releasedAt')
+                ->add('releasedAt', 'date')
                 ->add('type', 'choice')
                 ->add('director')
                 ->add('country')
-                ->add('actors', 'choice')
-                ->add('categories', 'choice');
+                ->add('actors')
+                ->add('categories');
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Valiknet\CinemaBundle\Entity\Movie',
+        ));
     }
 
     public function getName()

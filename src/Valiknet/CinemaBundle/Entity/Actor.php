@@ -297,4 +297,9 @@ class Actor
     {
         return $this->proposal;
     }
+
+    public function __toString()
+    {
+        return $this->name . " " . $this->surname;
+    }
 }

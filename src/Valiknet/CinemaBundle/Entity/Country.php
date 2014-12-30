@@ -206,4 +206,9 @@ class Country
     {
         return $this->directors;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
